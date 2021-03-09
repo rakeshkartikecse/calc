@@ -25,6 +25,16 @@ app.get("/bmiCalculator", function(req,res)
     res.sendFile(__dirname + "/bmiCalculator.html");
 })
 
+app.post("/bmiCalculator",function(req,res)
+{
+    var height=parseFloat(req.body.height);
+    var weight=parseFloat(req.body.weight);
+
+    var bmi=weight/(height*height);
+
+    res.send("The BMI of is " + bmi);
+})
+
 app.listen(3000,function(){
     console.log("Hello world!");
 });
