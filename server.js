@@ -20,9 +20,9 @@ app.post("/",function(req,res)
     res.send("The sum of the number is "+ result);
 })
 
-app.get("/calculator", function(req,res)
+app.get("/bmiCalculator", function(req,res)
 {
-    res.send("hello");
+    res.sendFile(__dirname + "/bmiCalculator.html");
 })
 
 app.listen(3000,function(){
