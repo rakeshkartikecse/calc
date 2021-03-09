@@ -35,6 +35,20 @@ app.post("/bmiCalculator",function(req,res)
     res.send("The BMI of is " + bmi);
 })
 
+app.get("/calDivision",function(req,res)
+{
+    res.sendFile(__dirname + "/calDivision.html");
+})
+
+app.post("/calDivision",function(req,res)
+{
+    var height=Number(req.body.height);
+    var weight=Number(req.body.weight);
+    var d=height/weight;
+
+    res.send("The division of the number is  " +d);
+})
+
 app.listen(3000,function(){
     console.log("Hello world!");
 });
