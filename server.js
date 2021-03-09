@@ -49,6 +49,22 @@ app.post("/calDivision",function(req,res)
     res.send("The division of the number is  " +d);
 })
 
+app.get("/todo",function(req,res){
+    var today=new Date();
+    var currentDay=today.getDay();
+
+    if(currentDay==6 || currentDay==0)
+    {
+        res.send("Today is off day");
+
+    }
+
+    else{
+        res.write("Today is working day");
+       // res.sendFile(__dirname +"/index.html");
+    }
+})
+
 app.listen(3000,function(){
     console.log("Hello world!");
 });
